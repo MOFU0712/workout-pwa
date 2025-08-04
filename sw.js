@@ -3,8 +3,8 @@
  * オフライン機能とキャッシュ管理
  */
 
-const CACHE_NAME = 'workout-pwa-v1.0.0';
-const STATIC_CACHE_NAME = 'workout-static-v1.0.0';
+const CACHE_NAME = 'workout-pwa-v1.1.0';
+const STATIC_CACHE_NAME = 'workout-static-v1.1.0';
 
 // キャッシュするファイル
 const STATIC_FILES = [
@@ -21,7 +21,9 @@ const STATIC_FILES = [
     './js/stats.js',
     './js/settings.js',
     './js/timer.js',
-    './manifest.json'
+    './manifest.json',
+    './icons/icon-192×192.png',
+    './icons/icon-512×512.png'
 ];
 
 // 外部リソース（YouTube等）
