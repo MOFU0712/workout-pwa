@@ -8,20 +8,20 @@ const STATIC_CACHE_NAME = 'workout-static-v1.0.0';
 
 // キャッシュするファイル
 const STATIC_FILES = [
-    '/',
-    '/index.html',
-    '/stats.html',
-    '/settings.html',
-    '/login.html',
-    '/timer.html',
-    '/css/style.css',
-    '/js/main.js',
-    '/js/storage.js',
-    '/js/auth.js',
-    '/js/stats.js',
-    '/js/settings.js',
-    '/js/timer.js',
-    '/manifest.json'
+    './',
+    './index.html',
+    './stats.html',
+    './settings.html',
+    './login.html',
+    './timer.html',
+    './css/style.css',
+    './js/main.js',
+    './js/storage.js',
+    './js/auth.js',
+    './js/stats.js',
+    './js/settings.js',
+    './js/timer.js',
+    './manifest.json'
 ];
 
 // 外部リソース（YouTube等）

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>運動ルーティン PWA</title>
+    <script>
+        // GitHub Pages の SPA リダイレクト処理
+        // PWAでホーム画面から起動時に index.html にリダイレクト
+        const path = window.location.pathname;
+        const base = '/workout-pwa/';
+        
+        if (path === base || path === base + '404.html') {
+            window.location.replace(base + 'index.html');
+        } else {
+            // 他のパスの場合もindex.htmlにリダイレクト
+            window.location.replace(base + 'index.html');
+        }
+    </script>
+</head>
+<body>
+    <p>リダイレクト中...</p>
+</body>
+</html>
