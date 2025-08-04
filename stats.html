@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2563eb">
+    <title>統計 - 運動ルーティン</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button class="back-btn" onclick="goHome()">← 戻る</button>
+            <h1>📊 運動統計</h1>
+        </header>
+
+        <main class="stats-main">
+            <!-- 統計サマリー -->
+            <div class="stats-summary">
+                <div class="stats-card">
+                    <div class="stats-item">
+                        <span class="stats-label">今日</span>
+                        <span class="stats-value" id="todayStats">0分</span>
+                    </div>
+                    <div class="stats-item">
+                        <span class="stats-label">今週</span>
+                        <span class="stats-value" id="weekStats">0分</span>
+                    </div>
+                    <div class="stats-item">
+                        <span class="stats-label">今月</span>
+                        <span class="stats-value" id="monthStats">0分</span>
+                    </div>
+                    <div class="stats-item">
+                        <span class="stats-label">連続日数</span>
+                        <span class="stats-value streak" id="streakStats">0日</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- カレンダー -->
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <button class="calendar-nav" id="prevMonth" onclick="changeMonth(-1)">‹</button>
+                    <h2 class="calendar-title" id="calendarTitle">2024年1月</h2>
+                    <button class="calendar-nav" id="nextMonth" onclick="changeMonth(1)">›</button>
+                </div>
+                
+                <div class="calendar-grid" id="calendarGrid">
+                    <!-- カレンダーがJavaScriptで生成される -->
+                </div>
+                
+                <div class="calendar-legend">
+                    <div class="legend-item">
+                        <div class="legend-color no-workout"></div>
+                        <span>運動なし</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color light-workout"></div>
+                        <span>1-15分</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color medium-workout"></div>
+                        <span>16-30分</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color heavy-workout"></div>
+                        <span>31分以上</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 詳細統計 -->
+            <div class="detailed-stats">
+                <h3>📈 詳細統計</h3>
+                
+                <div class="stats-section">
+                    <h4>月間実績</h4>
+                    <div class="monthly-chart" id="monthlyChart">
+                        <!-- 月間グラフがJavaScriptで生成される -->
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <h4>運動タイプ別時間</h4>
+                    <div class="category-stats" id="categoryStats">
+                        <!-- カテゴリ別統計がJavaScriptで生成される -->
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <h4>最近の運動履歴</h4>
+                    <div class="recent-workouts" id="recentWorkouts">
+                        <!-- 最近の運動履歴がJavaScriptで生成される -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/stats.js"></script>
+</body>
+</html>

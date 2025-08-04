@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2563eb">
+    <title>運動ルーティン</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="user-info" id="userInfo" style="display: none;">
+                <div class="user-avatar" id="userAvatar">U</div>
+                <div class="user-details">
+                    <div class="user-name" id="userName">ユーザー</div>
+                    <div class="user-status" id="userStatus">ログイン中</div>
+                </div>
+                <button class="logout-btn" onclick="authManager.logout()">ログアウト</button>
+            </div>
+            <h1>🏃‍♂️ 運動ルーティン</h1>
+            <div class="today-stats">
+                <span id="todayTotal">今日: 0分</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="video-list" id="videoList">
+                <!-- 動画リストがJavaScriptで生成される -->
+            </div>
+        </main>
+
+        <nav class="bottom-nav">
+            <div class="nav-grid">
+                <button class="nav-btn" id="statsBtn" onclick="navigateToStats()">
+                    📊 統計
+                </button>
+                <button class="nav-btn" id="settingsBtn" onclick="navigateToSettings()">
+                    ⚙️ 設定
+                </button>
+                <button class="nav-btn" id="loginNavBtn" onclick="navigateToLogin()">
+                    🔐 ログイン
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2563eb">
+    <title>設定 - 運動ルーティン</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button class="back-btn" onclick="goHome()">← 戻る</button>
+            <h1>⚙️ 設定</h1>
+        </header>
+
+        <main class="settings-main">
+            <!-- ユーザー情報 -->
+            <div class="settings-section">
+                <h2>👤 ユーザー情報</h2>
+                <div class="user-profile" id="userProfile">
+                    <!-- ユーザー情報がJavaScriptで生成される -->
+                </div>
+            </div>
+
+            <!-- 動画管理 -->
+            <div class="settings-section">
+                <h2>🎥 動画管理</h2>
+                <div class="video-management">
+                    <div class="section-header">
+                        <p>運動動画のURLと設定を編集できます</p>
+                        <button class="add-video-btn" onclick="showAddVideoForm()">
+                            ➕ 動画を追加
+                        </button>
+                    </div>
+                    
+                    <div class="video-list-edit" id="videoListEdit">
+                        <!-- 編集可能な動画リストがJavaScriptで生成される -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 動画追加フォーム -->
+            <div class="modal" id="videoModal" style="display: none;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 id="modalTitle">新しい動画を追加</h3>
+                        <button class="modal-close" onclick="closeVideoModal()">×</button>
+                    </div>
+                    
+                    <form id="videoForm" onsubmit="handleVideoSubmit(event)">
+                        <div class="form-group">
+                            <label for="videoTitle">動画タイトル</label>
+                            <input 
+                                type="text" 
+                                id="videoTitle" 
+                                name="title" 
+                                required 
+                                placeholder="例: 腹筋トレーニング 10分"
+                            >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="videoUrl">YouTube URL</label>
+                            <input 
+                                type="url" 
+                                id="videoUrl" 
+                                name="url" 
+                                required 
+                                placeholder="https://www.youtube.com/watch?v=VIDEO_ID"
+                            >
+                            <small class="form-help">YouTube動画のURLを貼り付けてください</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="videoCategory">カテゴリ</label>
+                            <select id="videoCategory" name="category" required>
+                                <option value="">カテゴリを選択</option>
+                                <option value="筋トレ">筋トレ</option>
+                                <option value="有酸素">有酸素</option>
+                                <option value="ヨガ">ヨガ</option>
+                                <option value="ストレッチ">ストレッチ</option>
+                                <option value="その他">その他</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="videoDuration">推定時間（分）</label>
+                            <input 
+                                type="number" 
+                                id="videoDuration" 
+                                name="duration" 
+                                required 
+                                min="1" 
+                                max="120"
+                                placeholder="10"
+                            >
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary" onclick="closeVideoModal()">
+                                キャンセル
+                            </button>
+                            <button type="submit" class="btn-primary" id="submitBtn">
+                                追加
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- アプリ設定 -->
+            <div class="settings-section">
+                <h2>🔧 アプリ設定</h2>
+                <div class="app-settings">
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <strong>通知</strong>
+                            <p>運動リマインダーの通知</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="notificationToggle" onchange="toggleNotifications()">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <strong>データ管理</strong>
+                            <p>運動記録のバックアップと復元</p>
+                        </div>
+                        <div class="setting-actions">
+                            <button class="btn-outline" onclick="exportData()">エクスポート</button>
+                            <button class="btn-outline" onclick="importData()">インポート</button>
+                        </div>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <strong>データリセット</strong>
+                            <p>全ての運動記録を削除</p>
+                        </div>
+                        <button class="btn-danger" onclick="resetAllData()">
+                            全データを削除
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- アカウント管理 -->
+            <div class="settings-section" id="accountSection">
+                <h2>👤 アカウント</h2>
+                <div class="account-settings">
+                    <button class="btn-outline" onclick="changePassword()">
+                        パスワード変更
+                    </button>
+                    <button class="btn-danger" onclick="deleteAccount()">
+                        アカウント削除
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- ナビゲーション -->
+        <nav class="bottom-nav">
+            <button class="nav-btn" onclick="goHome()">
+                🏠 ホーム
+            </button>
+        </nav>
+    </div>
+
+    <!-- ファイル入力（非表示） -->
+    <input type="file" id="importFile" accept=".json" style="display: none;" onchange="handleFileImport(event)">
+
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/settings.js"></script>
+    <script>
+        // 設定画面では認証を必須としない（ゲストでも利用可能）
+        document.addEventListener('DOMContentLoaded', function() {
+            // 必要に応じて認証状態による表示調整をここで行う
+        });
+    </script>
+</body>
+</html>
