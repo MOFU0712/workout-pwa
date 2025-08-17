@@ -10,7 +10,7 @@
 
 A **Progressive Web App (PWA)** for building daily workout habits, built with **pure HTML, CSS, and JavaScript**. This app provides a native-like experience without any frameworks, featuring offline functionality, workout tracking, and comprehensive statistics.
 
-🌐 **Live Demo**: [https://[username].github.io/workout-pwa/](https://[username].github.io/workout-pwa/)
+🌐 **Live Demo**: [https://MOFU0712.github.io/workout-pwa/](https://MOFU0712.github.io/workout-pwa/)
 
 ### ✨ Features
 
@@ -240,7 +240,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ### 📞 Support & Contact
 
-- **Issues**: [GitHub Issues](https://github.com/[username]/workout-pwa/issues)
+- **Issues**: [GitHub Issues](https://github.com/MOFU0712/workout-pwa/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/[username]/workout-pwa/discussions)
 - **Documentation**: See [LEARNING.md](LEARNING.md) for educational content
 
@@ -251,8 +251,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ### 🎯 概要
 
 **Progressive Web App (PWA)** として実装された運動習慣化アプリです。**純粋なHTML、CSS、JavaScript**のみで構築され、フレームワークを使わずにネイティブアプリ同等の体験を提供します。オフライン機能、運動記録、統計機能を備えています。
-
-🌐 **ライブデモ**: [https://[username].github.io/workout-pwa/](https://[username].github.io/workout-pwa/)
 
 ### ✨ 機能
 
@@ -482,7 +480,7 @@ live-server --port=8000
 
 ### 📞 サポート・連絡先
 
-- **問題**: [GitHub Issues](https://github.com/[username]/workout-pwa/issues)
+- **問題**: [GitHub Issues](https://github.com/MOFU0712/workout-pwa/issues)
 - **ディスカッション**: [GitHub Discussions](https://github.com/[username]/workout-pwa/discussions)
 - **ドキュメント**: 教育コンテンツは[LEARNING.md](LEARNING.md)をご覧ください
 
@@ -499,33 +497,6 @@ live-server --port=8000
 ![Desktop Home](screenshots/desktop-home.png)
 ![Desktop Stats](screenshots/desktop-stats.png)
 
----
-
-## 🗺️ Roadmap | ロードマップ
-
-### Phase 1: MVP ✅
-- [x] Basic PWA implementation
-- [x] YouTube video integration
-- [x] Timer functionality
-- [x] Local data storage
-
-### Phase 2: Enhanced UX ✅
-- [x] Statistics and calendar view
-- [x] User authentication
-- [x] Video management
-- [x] Settings panel
-
-### Phase 3: Advanced Features 🚧
-- [ ] Push notifications
-- [ ] Background sync
-- [ ] Social features
-- [ ] AI-powered recommendations
-
-### Phase 4: Backend Integration 📋
-- [ ] User accounts and cloud sync
-- [ ] Real-time collaboration
-- [ ] Advanced analytics
-- [ ] Mobile app versions
 
 ---
 
